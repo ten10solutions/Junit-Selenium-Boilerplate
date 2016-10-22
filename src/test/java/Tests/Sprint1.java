@@ -1,13 +1,12 @@
-package stepDefs;
+package Tests;
 
 import org.junit.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.BasketPage;
 import pageObjects.HomePage;
 
 import static junit.framework.TestCase.assertTrue;
+import static Tests.TestSuite.driverFactory;
 
 
 /**
@@ -17,16 +16,16 @@ import static junit.framework.TestCase.assertTrue;
 
 public class Sprint1 {
 
+    public static WebDriver driver = driverFactory.getDriver();
+    private HomePage homepage = new HomePage(driver);
+    private BasketPage basketpage = new BasketPage(driver);
 
-    public static WebDriver driver;
-    private HomePage homepage = new HomePage();
-    private BasketPage basketpage = new BasketPage();
 
     @BeforeClass
     public static void setUp(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\jack.forman\\Downloads\\chromedriver_win32\\chromedriver.exe");
-        driver = new ChromeDriver();
+
     }
+
 
     /**
      * This should make sure we are on the correct page, i.e. set up each test case so we can be sure that they run
@@ -58,8 +57,5 @@ public class Sprint1 {
 
     }
 
-    @AfterClass
-    public static void tearDown(){
-        driver.quit();
-    }
+
 }
