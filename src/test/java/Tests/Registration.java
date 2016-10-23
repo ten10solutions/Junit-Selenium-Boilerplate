@@ -3,7 +3,9 @@ package Tests;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import pageObjects.BasketPage;
+import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
+import pageObjects.LogInPage;
 
 import static junit.framework.TestCase.assertTrue;
 import static Tests.TestSuite.driverFactory;
@@ -14,11 +16,13 @@ import static Tests.TestSuite.driverFactory;
  */
 
 
-public class Sprint1 {
+public class Registration {
 
     public static WebDriver driver = driverFactory.getDriver();
     private HomePage homepage = new HomePage(driver);
     private BasketPage basketpage = new BasketPage(driver);
+    private LogInPage logInPage = new LogInPage(driver);
+    private CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage(driver);
 
 
     @BeforeClass
@@ -32,7 +36,7 @@ public class Sprint1 {
      */
     @Before
     public void individualSetUp(){
-        driver.navigate().to("https://www.amazon.co.uk/");
+        homepage.goTo();
     }
 
     /**
@@ -45,10 +49,23 @@ public class Sprint1 {
      * 6. Log out button shown;
      */
     @Test
-    public void navigateToBasket() throws InterruptedException {
-        homepage.isDisplayed();
-        homepage.navigateToBasket();
-        basketpage.isDisplayed();
+    public void registerAsNewUser(){
+        assertTrue(homepage.isDisplayed());
+        homepage.navigateToMyAccount();
+        logInPage.createNewAccount();
+        createNewAccountPage.fillInAllDetails();
+    }
+
+
+    /**
+     * Register as an existing customer
+     * 1. navigate to registration page
+     * 2. fill in all details - test@gmail.com
+     * 3. assert that already registered message is displayed
+     */
+    @Test
+    public void registerAsAlreadyRegisteredUser(){
+
     }
 
 

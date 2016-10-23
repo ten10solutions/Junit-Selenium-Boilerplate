@@ -11,7 +11,7 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        Tests.Sprint1.class})
+        Registration.class, Login.class, BuyJourney.class})
 public class TestSuite {
 
     static DriverFactory driverFactory = new DriverFactory();
