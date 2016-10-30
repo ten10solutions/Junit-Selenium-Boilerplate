@@ -14,11 +14,6 @@ public class BasketPage extends BasePage {
     public BasketPage(WebDriver driver) {
         this.driver = driver;
     }
-    public static final String URL = "/cart/view.html/";
 
-    public boolean isDisplayed(){
-        String currentUrl = driver.getCurrentUrl();
-        return currentUrl.contains(URL);
-    }
 
 }

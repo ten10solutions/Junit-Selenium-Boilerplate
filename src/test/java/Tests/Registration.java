@@ -3,9 +3,8 @@ package Tests;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import pageObjects.BasketPage;
-import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
-import pageObjects.LogInPage;
+import pageObjects.SignInPage;
 
 import static junit.framework.TestCase.assertTrue;
 import static Tests.TestSuite.driverFactory;
@@ -21,12 +20,14 @@ public class Registration {
     public static WebDriver driver = driverFactory.getDriver();
     private HomePage homepage = new HomePage(driver);
     private BasketPage basketpage = new BasketPage(driver);
-    private LogInPage logInPage = new LogInPage(driver);
-    private CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage(driver);
+    private SignInPage signInPage = new SignInPage(driver);
 
 
     @BeforeClass
     public static void setUp(){
+        if (driver == null){
+            driver = driverFactory.setDriver();
+        }
 
     }
 
@@ -41,32 +42,28 @@ public class Registration {
 
     /**
      * New user is able to register (New = not registered before)
-     * 1. New user fills in all details on registration page
-     * 2. Clicks register
-     * 3. Shown Homepage
-     * 4. Details displayed on my account button
-     * 5. Log in button not shown
-     * 6. Log out button shown;
+     * Navigate to signIn Page
+     * Enter E-Mail Address
+     * Click Create New Account
+     * Fill in All Details on registration form
+     * Click Register
+     * Check My Account Page is Displayed
      */
     @Test
     public void registerAsNewUser(){
-        assertTrue(homepage.isDisplayed());
-        homepage.navigateToMyAccount();
-        logInPage.createNewAccount();
-        createNewAccountPage.fillInAllDetails();
+        homepage.navigateToSignInPage();
+        signInPage.enterNewAccountEmailAddress();
+        signInPage.clickCreateAnAccount();
+
     }
 
-
-    /**
-     * Register as an existing customer
-     * 1. navigate to registration page
-     * 2. fill in all details - test@gmail.com
-     * 3. assert that already registered message is displayed
+    /** Cannot register if user Already Registered
+     * Pre-Conditions - Must have Email address of user already registered
+     * Navigate to Sign In Screen
+     * Enter E mail Address
+     * Click Create Account
+     * Verify error message displayed
      */
-    @Test
-    public void registerAsAlreadyRegisteredUser(){
-
-    }
 
 
     @After
