@@ -1,10 +1,11 @@
 package Tests;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import pageObjects.BasketPage;
+import pageObjects.ShoppingCartPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
 
@@ -17,13 +18,13 @@ public class SignIn {
 
     public static WebDriver driver = driverFactory.getDriver();
     private HomePage homepage = new HomePage(driver);
-    private BasketPage basketpage = new BasketPage(driver);
-    private SignInPage signInPage = new SignInPage(driver);
+
 
     @Before
     public void individualSetUp(){
         homepage.goTo();
     }
+
 
     /** Sign in as Registered User
      * Pre-Conditions - Must have signIn information for a registered user
@@ -33,9 +34,8 @@ public class SignIn {
      * Click Sign In
      * Verify HomePage is Displayed
      */
-    @Test
+    @Test @Ignore
     public void signInAsRegisteredUser(){
-        homepage.navigateToSignInPage();
 
     }
 
@@ -47,8 +47,32 @@ public class SignIn {
      * Click Sign in
      * Verify Error Message is Displayed
      */
-    @Test
+    @Test @Ignore
     public void signInAsUnRegisteredUser(){
+
+    }
+
+    /** Forgotten Password
+     * Pre-Conditions - Must have signIn information for a registered user
+     * Navigate to Sign In Page
+     * Click Forgotten Password
+     * Enter E mail Address
+     * Click retrieve password
+     * Confirmation message displayed
+     */
+    @Test @Ignore
+    public void forgottenPassword(){
+
+    }
+
+    /**Able to sign out
+     * Pre-Conditions - Must have signIn information for a registered user
+     * Navigate to Sign In Page
+     * Click sign out
+     * Verify customer signed out
+     */
+    @Test @Ignore
+    public void signOut(){
 
     }
 }

@@ -2,7 +2,8 @@ package Tests;
 
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import pageObjects.BasketPage;
+import pageObjects.ShoppingCartPage;
+import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
 
@@ -19,8 +20,9 @@ public class Registration {
 
     public static WebDriver driver = driverFactory.getDriver();
     private HomePage homepage = new HomePage(driver);
-    private BasketPage basketpage = new BasketPage(driver);
+    private ShoppingCartPage basketpage = new ShoppingCartPage(driver);
     private SignInPage signInPage = new SignInPage(driver);
+    private CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage(driver);
 
 
     @BeforeClass
@@ -40,6 +42,23 @@ public class Registration {
         homepage.goTo();
     }
 
+
+    /** Cannot register if user Already Registered
+     * Pre-Conditions - Must have Email address of user already registered
+     * Navigate to Sign In Screen
+     * Enter E mail Address
+     * Click Create Account
+     * Verify error message displayed
+     */
+    @Test
+    public void registerAlreadyRegistered(){
+        homepage.navigateToSignInPage();
+        signInPage.enterEmailAddress("test@test.com");
+        signInPage.clickCreateAnAccount();
+        signInPage.alreadyRegisteredAlertPresent();
+    }
+
+
     /**
      * New user is able to register (New = not registered before)
      * Navigate to signIn Page
@@ -49,26 +68,22 @@ public class Registration {
      * Click Register
      * Check My Account Page is Displayed
      */
-    @Test
+    @Test @Ignore
     public void registerAsNewUser(){
-        homepage.navigateToSignInPage();
-        signInPage.enterNewAccountEmailAddress();
-        signInPage.clickCreateAnAccount();
 
     }
 
-    /** Cannot register if user Already Registered
-     * Pre-Conditions - Must have Email address of user already registered
-     * Navigate to Sign In Screen
-     * Enter E mail Address
-     * Click Create Account
-     * Verify error message displayed
-     */
+
 
 
     @After
     public void individualTearDown(){
 
+    }
+
+    @AfterClass
+    public static void mainTearDown(){
+        //driver.quit();
     }
 
 

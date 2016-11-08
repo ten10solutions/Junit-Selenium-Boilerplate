@@ -1,9 +1,10 @@
 package Tests;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import pageObjects.BasketPage;
+import pageObjects.ShoppingCartPage;
 import pageObjects.HomePage;
 
 import static Tests.TestSuite.driverFactory;
@@ -16,26 +17,43 @@ public class BuyJourney {
 
     public static WebDriver driver = driverFactory.getDriver();
     private HomePage homepage = new HomePage(driver);
-    private BasketPage basketpage = new BasketPage(driver);
+    private ShoppingCartPage basketpage = new ShoppingCartPage(driver);
 
     @Before
     public void individualSetUp(){
         homepage.goTo();
     }
 
-    /** Add product to Cart from homepage
-     * Select product from homepage
-     * Enter Quantity
-     * Enter Size
-     * Click Add to cart
-     * Click continue shopping on pop-up
-     * Navigate to shopping cart
-     * Verify item added
+    /**Select Item from homepage, takes to product page
+     * On homepage
+     * Click a product's image
+     * Verify product page is displayed
      */
-    @Test
-    public void navigateToBasket() {
-//        assertTrue(homepage.isDisplayed());
-//        homepage.navigateToBasket();
-//        assertTrue(basketpage.isDisplayed());
+    @Test @Ignore
+    public void selectItemFromHomepage() {
+
+    }
+
+    /** Add product to Cart from homepage
+     * Hover over product from homepage
+     * Click add to cart
+     * Verify added to cart
+     */
+    @Test @Ignore
+    public void addProductToCartFromHomepage(){
+
+    }
+
+    /** Add product to cart from Product page
+     * On product page
+     * Select Quantity
+     * Select Size
+     * Select Colour (if available)
+     * Click add to cart
+     * Verify Added to Cart
+     */
+    @Test @Ignore
+    public void addProductToCartFromProductPage(){
+
     }
 }
