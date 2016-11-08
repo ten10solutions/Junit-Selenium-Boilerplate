@@ -21,6 +21,12 @@ abstract class BasePage {
         element.click();
     }
 
+    WebElement waitUntilClickable(By selector){
+        WebElement element = driver.findElement(selector);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        return element;
+    }
+
     boolean elementIsVisible(WebElement element){
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
