@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageObjects.ShoppingCartPage;
 import pageObjects.HomePage;
+import pageObjects.SignInPage;
 
 import static Tests.TestSuite.driverFactory;
 import static junit.framework.TestCase.assertTrue;
@@ -18,6 +19,7 @@ public class BuyJourney {
     public static WebDriver driver = driverFactory.getDriver();
     private HomePage homepage = new HomePage(driver);
     private ShoppingCartPage basketpage = new ShoppingCartPage(driver);
+    private SignInPage signInPage = new SignInPage(driver);
 
     @Before
     public void individualSetUp(){
