@@ -7,6 +7,8 @@ import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
 
+import java.io.IOException;
+
 import static junit.framework.TestCase.assertTrue;
 import static Tests.TestSuite.driverFactory;
 
@@ -26,7 +28,7 @@ public class Registration {
 
 
     @BeforeClass
-    public static void setUp(){
+    public static void setUp() throws IOException {
         if (driver == null){
             driver = driverFactory.setDriver();
         }

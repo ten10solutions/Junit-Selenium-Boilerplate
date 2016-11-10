@@ -5,6 +5,8 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import java.io.IOException;
+
 /**
  * Created by jack.forman on 22/10/2016.
  */
@@ -17,7 +19,7 @@ public class TestSuite {
     static DriverFactory driverFactory = new DriverFactory();
 
     @BeforeClass
-    public static void suiteSetUp(){
+    public static void suiteSetUp() throws IOException {
         driverFactory.setDriver();
     }
 
