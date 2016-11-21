@@ -31,7 +31,7 @@ public class SignIn {
      * Fill in Email Address
      * Fill in Password
      * Click Sign In
-     * Verify HomePage is Displayed
+     * Verify My Account is Displayed
      */
     @Test @Ignore
     public void signInAsRegisteredUser(){
