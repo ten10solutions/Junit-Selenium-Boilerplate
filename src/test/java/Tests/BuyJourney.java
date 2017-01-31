@@ -28,7 +28,8 @@ public class BuyJourney {
 
     /**Select Item from homepage, takes to product page
      * On homepage
-     * Click a product's image
+     * Hover over a product's image
+     * Click More Button
      * Verify product page is displayed
      */
     @Test @Ignore
