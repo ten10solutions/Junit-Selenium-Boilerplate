@@ -9,10 +9,8 @@ import static junit.framework.TestCase.assertTrue;
  */
 public class ShoppingCartPage extends BasePage {
 
-    WebDriver driver;
-
     public ShoppingCartPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
 

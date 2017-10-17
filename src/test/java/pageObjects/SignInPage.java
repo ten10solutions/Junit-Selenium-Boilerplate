@@ -10,9 +10,8 @@ import org.openqa.selenium.WebElement;
  */
 public class SignInPage extends BasePage {
 
-    WebDriver driver;
     public SignInPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     private static final By EMAIL_ADDRESS_INPUT_BOX = By.cssSelector("input#email_create");

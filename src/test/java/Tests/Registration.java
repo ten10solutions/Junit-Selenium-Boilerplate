@@ -25,15 +25,6 @@ public class Registration {
     private CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage(driver);
 
 
-    @BeforeClass
-    public static void setUp(){
-        if (driver == null){
-            driver = driverFactory.setDriver();
-        }
-
-    }
-
-
     /**
      * This should make sure we are on the correct page, i.e. set up each test case so we can be sure that they run
      */
@@ -83,6 +74,7 @@ public class Registration {
 
     @AfterClass
     public static void mainTearDown(){
+        // Uncomment this when just running individual tests in this file.
         //driver.quit();
     }
 

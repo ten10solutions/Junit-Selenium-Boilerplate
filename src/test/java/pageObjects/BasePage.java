@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,26 +14,31 @@ import static Tests.Registration.driver;
  */
 abstract class BasePage {
 
-   private WebDriverWait wait = new WebDriverWait(driver, 20);
 
-    void waitAndClick(By selector){
-        WebElement element = driver.findElement(selector);
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+    protected WebDriver driver;
+    protected WebDriverWait wait;
+
+    BasePage(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, 20);
+    }
+
+    void waitAndClick(By selector) {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(selector));
         element.click();
     }
 
-    boolean elementIsVisible(WebElement element){
+    boolean elementIsVisible(WebElement element) {
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
             return true;
-        } catch (ElementNotVisibleException e){
+        } catch (ElementNotVisibleException e) {
             return false;
         }
     }
 
-    void findAndType(By elementSelector, String inputString){
-        WebElement element =  driver.findElement(elementSelector);
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+    void findAndType(By elementSelector, String inputString) {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elementSelector));
         element.sendKeys(inputString);
     }
 

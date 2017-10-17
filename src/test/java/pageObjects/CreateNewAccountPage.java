@@ -8,9 +8,8 @@ import org.openqa.selenium.WebDriver;
  */
 public class CreateNewAccountPage extends BasePage {
 
-    WebDriver driver;
     public CreateNewAccountPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
 }

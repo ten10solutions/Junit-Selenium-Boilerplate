@@ -8,10 +8,8 @@ import org.openqa.selenium.WebDriver;
  */
 public class HomePage extends BasePage {
 
-    WebDriver driver;
-
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
     private static String URL = "http://automationpractice.com/index.php";
     private static final By SIGN_IN_BUTTON = By.cssSelector("a.login");

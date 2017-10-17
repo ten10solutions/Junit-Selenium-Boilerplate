@@ -18,7 +18,6 @@ public class TestSuite {
 
     @BeforeClass
     public static void suiteSetUp(){
-        driverFactory.setDriver();
     }
 
 
