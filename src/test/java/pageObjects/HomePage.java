@@ -11,7 +11,7 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-    private static String URL = "http://automationpractice.com/index.php";
+    private static String URL = "http://172.18.200.76/index.php";
     private static final By SIGN_IN_BUTTON = By.cssSelector("a.login");
 
    public void goTo(){

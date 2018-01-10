@@ -1,6 +1,5 @@
 package Tests;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -11,10 +10,6 @@ public class DriverFactory {
 
     private WebDriver driver;
 
-    static {
-        ChromeDriverManager.getInstance().setup();
-    }
-
     public WebDriver getDriver(){
         if (driver == null) {
             setDriver();
@@ -22,10 +17,9 @@ public class DriverFactory {
         return driver;
     }
 
-    public WebDriver setDriver(){
+    private void setDriver(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        return driver;
     }
 
 }
