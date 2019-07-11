@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class DriverFactory {
 
     static {
-        ChromeDriverManager.getInstance().setup();
+        WebDriverManager.chromedriver().setup();
     }
 
     private WebDriver driver;
