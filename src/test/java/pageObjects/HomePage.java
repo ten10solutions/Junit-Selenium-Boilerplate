@@ -11,7 +11,7 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-    private static String URL = "http://35.179.99.144/";
+    private static String URL = "http://18.168.19.161/";
     private static final By SIGN_IN_BUTTON = By.cssSelector("a.login");
 
    public void goTo(){

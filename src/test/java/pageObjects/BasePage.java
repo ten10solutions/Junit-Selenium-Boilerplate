@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 import static Tests.Registration.driver;
 
 /**
@@ -20,7 +22,7 @@ abstract class BasePage {
 
     BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 20);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     void waitAndClick(By selector) {
