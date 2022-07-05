@@ -1,7 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -34,7 +34,7 @@ abstract class BasePage {
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
             return true;
-        } catch (ElementNotVisibleException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
