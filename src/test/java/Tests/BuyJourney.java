@@ -1,15 +1,14 @@
 package Tests;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import pageObjects.ShoppingCartPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
 
 import static Tests.TestSuite.driverFactory;
-import static junit.framework.TestCase.assertTrue;
 
 /**
  * Created by jack.forman on 23/10/2016.
@@ -21,7 +20,7 @@ public class BuyJourney {
     private ShoppingCartPage basketpage = new ShoppingCartPage(driver);
     private SignInPage signInPage = new SignInPage(driver);
 
-    @Before
+    @BeforeEach
     public void individualSetUp(){
         homepage.goTo();
     }
@@ -32,7 +31,7 @@ public class BuyJourney {
      * Click More Button
      * Verify product page is displayed
      */
-    @Test @Ignore
+    @Test @Disabled
     public void selectItemFromHomepage() {
 
     }
@@ -42,7 +41,7 @@ public class BuyJourney {
      * Click add to cart
      * Verify added to cart
      */
-    @Test @Ignore
+    @Test @Disabled
     public void addProductToCartFromHomepage(){
 
     }
@@ -55,7 +54,7 @@ public class BuyJourney {
      * Click add to cart
      * Verify Added to Cart
      */
-    @Test @Ignore
+    @Test @Disabled
     public void addProductToCartFromProductPage(){
 
     }
