@@ -1,8 +1,8 @@
 package Tests;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import pageObjects.HomePage;
 import pageObjects.ShoppingCartPage;
@@ -18,7 +18,7 @@ public class ShoppingCart {
     private HomePage homepage = new HomePage(driver);
     private ShoppingCartPage basketpage = new ShoppingCartPage(driver);
 
-    @Before
+    @BeforeEach
     public void individualSetUp(){
         homepage.goTo();
     }
@@ -30,7 +30,7 @@ public class ShoppingCart {
      * Verify Item is removed from Basket
      * Extension - verify pricing and totals are updated to reflect accurately
      */
-    @Test @Ignore
+    @Test @Disabled
     public void removeItemFromShoppingBasket(){
 
     }
@@ -43,7 +43,7 @@ public class ShoppingCart {
      * Verify Product counter (Top right) is updated
      * Extension - verify pricing and totals are updated to reflect accurately
      */
-    @Test @Ignore
+    @Test @Disabled
     public void increaseQuantityOfProductInBasket(){
 
     }
@@ -54,7 +54,7 @@ public class ShoppingCart {
      * Click proceed to checkout
      * Verify sign in page displayed
      */
-    @Test @Ignore
+    @Test @Disabled
     public void proceedToCheckoutNotLoggedIn(){
 
     }
@@ -73,7 +73,7 @@ public class ShoppingCart {
      * Confirm order
      * Order confirmation page is displayed
      */
-    @Test @Ignore
+    @Test @Disabled
     public void proceedToCheckoutAndBuyLoggedIn(){
 
     }

@@ -1,13 +1,13 @@
 package Tests;
 
 import org.junit.*;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import pageObjects.ShoppingCartPage;
 import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
 
-import static junit.framework.TestCase.assertTrue;
 import static Tests.TestSuite.driverFactory;
 
 
@@ -28,7 +28,7 @@ public class Registration {
     /**
      * This should make sure we are on the correct page, i.e. set up each test case so we can be sure that they run
      */
-    @Before
+    @BeforeEach
     public void individualSetUp(){
         homepage.goTo();
     }
@@ -59,7 +59,7 @@ public class Registration {
      * Click Register
      * Check My Account Page is Displayed
      */
-    @Test @Ignore
+    @Test @Disabled
     public void registerAsNewUser(){
 
     }
@@ -67,12 +67,12 @@ public class Registration {
 
 
 
-    @After
+    @AfterEach
     public void individualTearDown(){
 
     }
 
-    @AfterClass
+    @AfterAll
     public static void mainTearDown(){
         // Uncomment this when just running individual tests in this file.
         //driver.quit();

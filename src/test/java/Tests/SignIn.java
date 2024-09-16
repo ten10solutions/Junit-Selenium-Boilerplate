@@ -1,8 +1,8 @@
 package Tests;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import pageObjects.ShoppingCartPage;
 import pageObjects.HomePage;
@@ -19,7 +19,7 @@ public class SignIn {
     private HomePage homepage = new HomePage(driver);
 
 
-    @Before
+    @BeforeEach
     public void individualSetUp(){
         homepage.goTo();
     }
@@ -33,7 +33,7 @@ public class SignIn {
      * Click Sign In
      * Verify My Account is Displayed
      */
-    @Test @Ignore
+    @Test @Disabled
     public void signInAsRegisteredUser(){
 
     }
@@ -46,7 +46,7 @@ public class SignIn {
      * Click Sign in
      * Verify Error Message is Displayed
      */
-    @Test @Ignore
+    @Test @Disabled
     public void signInAsUnRegisteredUser(){
 
     }
@@ -59,7 +59,7 @@ public class SignIn {
      * Click retrieve password
      * Confirmation message displayed
      */
-    @Test @Ignore
+    @Test @Disabled
     public void forgottenPassword(){
 
     }
@@ -70,7 +70,7 @@ public class SignIn {
      * Click sign out
      * Verify customer signed out
      */
-    @Test @Ignore
+    @Test @Disabled
     public void signOut(){
 
     }
